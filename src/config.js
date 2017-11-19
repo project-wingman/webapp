@@ -3,23 +3,24 @@ import locales from './locales'
 import routes from './routes'
 import themes from './themes'
 import grants from './grants'
+import firebase from 'firebase/firestore'
 
 const config = {
   firebase_config: {
-      apiKey: "AIzaSyAcDtk6LLyla6erULIPCMhEhg70uCbxVMc",
-      authDomain: "wingman-1745a.firebaseapp.com",
-      databaseURL: "https://wingman-1745a.firebaseio.com",
-      projectId: "wingman-1745a",
-      storageBucket: "wingman-1745a.appspot.com",
-      messagingSenderId: "1005911641189"
+    apiKey: 'AIzaSyAcDtk6LLyla6erULIPCMhEhg70uCbxVMc',
+    authDomain: 'wingman-1745a.firebaseapp.com',
+    databaseURL: 'https://wingman-1745a.firebaseio.com',
+    projectId: 'wingman-1745a',
+    storageBucket: 'wingman-1745a.appspot.com',
+    messagingSenderId: '1005911641189'
   },
   firebase_config_dev: {
-      apiKey: "AIzaSyAcDtk6LLyla6erULIPCMhEhg70uCbxVMc",
-      authDomain: "wingman-1745a.firebaseapp.com",
-      databaseURL: "https://wingman-1745a.firebaseio.com",
-      projectId: "wingman-1745a",
-      storageBucket: "wingman-1745a.appspot.com",
-      messagingSenderId: "1005911641189"
+    apiKey: 'AIzaSyAcDtk6LLyla6erULIPCMhEhg70uCbxVMc',
+    authDomain: 'wingman-1745a.firebaseapp.com',
+    databaseURL: 'https://wingman-1745a.firebaseio.com',
+    projectId: 'wingman-1745a',
+    storageBucket: 'wingman-1745a.appspot.com',
+    messagingSenderId: '1005911641189'
   },
   firebase_providers: [
     'google.com',
@@ -40,6 +41,20 @@ const config = {
   routes,
   getMenuItems,
   firebaseLoad: () => import('./firebase'),
+
+  onAuthStateChanged: (user, props, firebaseApp) => {
+    console.log(user)
+    console.log(props)
+    console.log(firebaseApp)
+
+    let doc = firebaseApp.firestore().collection('users').doc(user.uid)
+
+    doc.set({
+      name: user.displayName,
+      email: user.email,
+      awesome: true
+    })
+  }
 }
 
 export default config
