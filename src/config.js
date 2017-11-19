@@ -42,19 +42,6 @@ const config = {
   getMenuItems,
   firebaseLoad: () => import('./firebase'),
 
-  onAuthStateChanged: (user, props, firebaseApp) => {
-    console.log(user)
-    console.log(props)
-    console.log(firebaseApp)
-
-    let doc = firebaseApp.firestore().collection('users').doc(user.uid)
-
-    doc.set({
-      name: user.displayName,
-      email: user.email,
-      awesome: true
-    })
-  }
 }
 
 export default config
