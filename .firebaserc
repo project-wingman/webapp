@@ -1,7 +1,7 @@
 {
   "projects": {
-    "default": "react-most-wanted-dev",
-    "dev": "react-most-wanted-dev",
-    "prod": "react-most-wanted-3b1b2"
+    "default": "wingman-1745a",
+    "dev": "wingman-1745a",
+    "prod": "wingman-1745a"
   }
 }

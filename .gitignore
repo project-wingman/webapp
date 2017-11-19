@@ -22,3 +22,5 @@ firebase-debug.log
 #codecov
 codecov.yml
 .idea
+
+package-lock.json
