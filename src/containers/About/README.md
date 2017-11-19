@@ -11,8 +11,6 @@ This is a `shell` for my future applications with the minimum features I would l
 
 You can find an example of this project in this [DEMO](https://www.react-most-wanted.com/).
 
-For quesions you can join our [gitter room](https://gitter.im/react-most-wanted/Lobby).
-
 I tried to make the project as clean as possible and to use all libraries in their pure ways.
 
 ## Table of Contents
@@ -22,7 +20,7 @@ I tried to make the project as clean as possible and to use all libraries in the
 - [Usage](#usage)
   - [Simple run](#simple-run)
   - [Reuse for own project](#reuse-for-own-project)
-- [Customization](#customization)
+- [Customatisation](#customatisation)
   - [Internationalization](#internationalization)
   - [Theming](#theming)
   - [Firebase lists](#firebase-lists)
@@ -125,16 +123,10 @@ if you want to save the project into a specific folder (in this example "my_proj
 
 Now go with the console into the folder. If you haven't provided a name like "my_project" then it will be the default "react-most-wanted".
 
-Once in the project folder, you should install NPM dependendencies by running:
+In he folder run this command to start the development mode of the project:
 
 ```js
-npm install
-```
-
-Then, run this command to start the development mode of the project:
-
-```js
-npm start
+npm run dev
 ```
 
 For publishing run:
@@ -160,7 +152,7 @@ After setting up the code we need to deploy our application to Firebase. As firs
 
 To use firebase we need to install the firebase tools by running `npm install -g firebase-tools` and after that login to firebase with `firebase login`.
 
-After the login run `firebase init` to setup the Firebase project. Override the existing project and select yours from your Firebase console.
+After the login run `fribease init` to setup the Firebase project. Override the existing project and select yours from your Firebase console.
 Override only the '.firebasesrc' file and leave the other as they are because the database and storage rules, functions and firebase settings should stay as they are. If you override them the project will probably not work as it should.
 
 Don't forget to setup the email configs into the firebase functions using `firebase functions:config:set gmail.email="myusername@gmail.com" gmail.password="secretpassword"`.
@@ -168,7 +160,7 @@ Don't forget to setup the email configs into the firebase functions using `fireb
 You should now be able to deploy your application to your Firebase using `firebase deploy`.
 
 
-##Customization
+##Customatisation
 
 ### Internationalization
 
@@ -305,7 +297,7 @@ These are initializing the list and unsubscribing from it if we leave the compon
 
 To change the drawer (left menu) width go to the 'config.js' file and change the value of  'drawer_width' :)
 
-### Authorization
+### Authorisation
 
 Note that authentication and authorization are not the same thing! With authentication we identify who we have as user and with authorization we identify what that user can do in our application. In this project authorization is managed over `grants` and `roles`. Every grant gives the user the authorization to do a specific action (read, create, edit or delete) in the database. Roles are defining a group of grants you can give a user. They are just for managing large number of grants easily. Every grant can still be managed separately.
 
