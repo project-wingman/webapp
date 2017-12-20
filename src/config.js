@@ -3,7 +3,6 @@ import locales from './locales'
 import routes from './routes'
 import themes from './themes'
 import grants from './grants'
-import firebase from 'firebase/firestore'
 
 const config = {
   firebase_config: {
